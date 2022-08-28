@@ -3,6 +3,7 @@ import { useState } from 'react';
 import MenuFilter from '../MenuFilter/MenuFilter';
 import styles from './RegisterContent.module.css';
 import  axios  from 'axios';
+import { Link } from 'react-router-dom';
 
 const RegisterContent = (props) => {
         const [title, setTitle] = useState("");
@@ -10,6 +11,7 @@ const RegisterContent = (props) => {
         const [peoNum, setPeoNum] = useState("");
         const [useTime, setUseTime] = useState("");
         const [place, setPlace] = useState("");
+        const [category, setCategory] = useState("");
         const [content, setContent] = useState("");
 
         const resetInput = () => {
@@ -22,8 +24,13 @@ const RegisterContent = (props) => {
                 setContent("");
         };
 
+        const getId = (id) => {
+                setCategory(id);
+                console.log(id);
+        };
+
         const handleButtonClick = async (e) => {
-                const request_data = { title: title, shopName: shopName, peoNum: peoNum, useTime: useTime, place: place, content: content };
+                const request_data = { title: title, shopName: shopName, peoNum: peoNum, useTime: useTime, place: place, category: category, content: content };
                 try {
                         let response = await axios({
                                 method: "post",
@@ -102,7 +109,7 @@ const RegisterContent = (props) => {
                                         />
                                 </div>
                         </div>
-                        <MenuFilter />
+                        <MenuFilter getId={getId}/>
                         <input
                                 id="input"
                                 className={styles.content}
@@ -111,9 +118,14 @@ const RegisterContent = (props) => {
                                 value={content}
                                 onChange={(e) => setContent(e.target.value)}
                         />
-                        <button className={styles.button} onClick={handleButtonClick}>
-                                배달 등록
-                        </button>
+                        <Link
+                                to={"/delivBoard"}
+                                className={styles.link}
+                        >
+                                <button className={styles.button} onClick={handleButtonClick}>
+                                        배달 등록
+                                </button>
+                        </Link>
                 </div>
                 </>
         );

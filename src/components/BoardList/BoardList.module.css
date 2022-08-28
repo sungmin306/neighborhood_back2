@@ -1,0 +1,18 @@
+.title {
+        margin: 30px 250px 0px 250px;
+        font-weight: bold;
+}
+
+.write {
+        cursor: pointer;
+        width: 100px;
+        height: 35px;
+        position: relative;
+        left: 900px;
+}
+
+.boxContainer {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+}
