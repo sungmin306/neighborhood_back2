@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     #APP Setting
     # 'login',
     'accounts',
-
+    'post',
     #DRF & react
     'rest_framework',
     'corsheaders',
@@ -144,7 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 

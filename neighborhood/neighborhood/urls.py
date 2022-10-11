@@ -19,5 +19,15 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('neighborhood/accounts/v1/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('post/', include('post.urls')),
 ]
+
+# http://localhost:8000/api/accounts/v1/password/reset/
+# http://localhost:8000/api/accounts/v1/password/reset/confirm/
+# http://localhost:8000/api/accounts/v1/login/
+# http://localhost:8000/api/accounts/v1/logout/
+# http://localhost:8000/api/accounts/v1/user/
+# http://localhost:8000/api/accounts/v1/password/change/
+# http://localhost:8000/api/accounts/v1/token/verify/
+# http://localhost:8000/api/accounts/v1/token/refresh/
